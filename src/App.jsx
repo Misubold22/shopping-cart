@@ -14,6 +14,15 @@ function App() {
         >
           Home
         </NavLink>
+        <NavLink
+          to="/shop"
+          style={({ isActive }) => ({
+            padding: 5,
+            ...(isActive ? { color: "red" } : {}),
+          })}
+        >
+          Shop
+        </NavLink>
 
         <NavLink
           to="/posts"

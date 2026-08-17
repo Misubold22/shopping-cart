@@ -7,6 +7,7 @@ import Posts from "./Posts";
 import PostLists from "./PostLists";
 import Post from "./Post";
 import Profile from "./Profile";
+import Shop from "./components/Shop";
 //import randomProfile from "./randomProfile";
 //import DefaultProfile from "./DefaultProfile";
 
@@ -17,6 +18,7 @@ const routes = [
     errorElement: <NoMatch />,
     children: [
       { index: true, element: <Home /> },
+      { path: "shop", element: <Shop /> },
       { path: "about", element: <About /> },
       {
         path: "posts",
