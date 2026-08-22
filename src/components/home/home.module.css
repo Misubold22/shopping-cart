@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Is;
+  src: url("../../fonts/1.ttf");
+}
+
+@font-face {
+  font-family: GreenHouse;
+  src: url("../../fonts/GreenHouse.otf");
+}
+
+.header {
+  background-color: aqua;
+  color: black;
+}

@@ -1,15 +1,12 @@
 // routes.jsx
 import App from "./App";
-import Home from "./Home";
+import Home from "./components/home/Home.jsx";
 import About from "./About";
 import NoMatch from "./NoMatch";
-import Posts from "./Posts";
+import Contact from "./Contact";
 import PostLists from "./PostLists";
 import Post from "./Post";
-import Profile from "./Profile";
 import Shop from "./components/Shop";
-//import randomProfile from "./randomProfile";
-//import DefaultProfile from "./DefaultProfile";
 
 const routes = [
   {
@@ -22,18 +19,13 @@ const routes = [
       { path: "about", element: <About /> },
       {
         path: "posts",
-        element: <Posts />,
+        element: <Contact />,
         children: [
           { index: true, element: <PostLists /> },
           { path: ":slug", element: <Post /> },
         ],
       },
       { path: "*", element: <NoMatch /> },
-
-      {
-        path: "profile/:name",
-        element: <Profile />,
-      },
     ],
   },
 ];

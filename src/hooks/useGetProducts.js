@@ -18,7 +18,8 @@ const useGetProducts = () => {
         setError(err.message);
         setProducts(null);
       } finally {
-        setLoading(false);
+        //setLoading(false);
+        setTimeout(() => setLoading(false), 300);
       }
     };
 
