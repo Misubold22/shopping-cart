@@ -1,10 +1,11 @@
 // Shop.jsx
-import removeUnwantedProducts from "../utils/removeUnwantedProducts";
-import useGetProducts from "../hooks/useGetProducts";
+import removeUnwantedProducts from "../../utils/removeUnwantedProducts";
+import useGetProducts from "../../hooks/useGetProducts";
 //import getRequestWithNativeFetch from "../api/getRequestWithNativeFetch";
-import Spinner from "../Spinner";
+import Spinner from "../../Spinner";
 //import { useLocation } from "react-router";
 import { useOutletContext } from "react-router";
+import Footer from "../footer/Footer.jsx";
 
 const ProductsGrid = ({ handleClick }) => {
   const { products, error, loading } = useGetProducts();
@@ -35,11 +36,11 @@ const ProductsGrid = ({ handleClick }) => {
 };
 
 function Shop() {
-  const [setCount, setIsHidden] = useOutletContext();
+  const [setCount] = useOutletContext();
   const handleClick = (e) => {
     console.log(e.target.id);
     setCount((count) => count + 1);
-    setIsHidden(true);
+    //  setIsHidden(true);
   };
 
   return (
@@ -48,6 +49,7 @@ function Shop() {
         {" "}
         <ProductsGrid handleClick={handleClick} />
       </section>
+      <Footer />
     </>
   );
 }

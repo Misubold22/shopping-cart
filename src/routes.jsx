@@ -6,7 +6,7 @@ import NoMatch from "./NoMatch";
 import Contact from "./Contact";
 import PostLists from "./PostLists";
 import Post from "./Post";
-import Shop from "./components/Shop";
+import Shop from "./components/shop/Shop.jsx";
 
 const routes = [
   {
@@ -15,6 +15,7 @@ const routes = [
     errorElement: <NoMatch />,
     children: [
       { index: true, element: <Home /> },
+
       { path: "shop", element: <Shop /> },
       { path: "about", element: <About /> },
       {

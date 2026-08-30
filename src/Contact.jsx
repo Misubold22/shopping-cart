@@ -1,11 +1,13 @@
 // Posts.jsx
 import { Outlet } from "react-router";
+import Footer from "./components/footer/Footer.jsx";
 
 function Contact() {
   return (
-    <div style={{ padding: 20 }}>
+    <div>
       <h2>Blog</h2>
       <Outlet />
+      <Footer />
     </div>
   );
 }

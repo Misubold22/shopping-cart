@@ -6,16 +6,16 @@ import { NavLink, Outlet } from "react-router";
 import { IoMdCart } from "react-icons/io";
 import { IconContext } from "react-icons";
 
-const ShowCartCount = ({ count, setIsHidden }) => {
-  () => setIsHidden(false);
+const ShowCartCount = ({ count }) => {
+  // () => setIsHidden(false);
   return <div className={styles.orderCount}>{count}</div>;
 };
 
-const Header = ({ isHidden, setIsHidden, count, setCount }) => {
+const Header = ({ count, setCount }) => {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <header>
+    <header className={styles.header}>
       <nav
         className={
           clicked
@@ -25,43 +25,50 @@ const Header = ({ isHidden, setIsHidden, count, setCount }) => {
       >
         <ul>
           {!clicked && (
-            <NavLink
-              to="/"
-              viewTransition
-              className={`${styles.list}${styles.logo}`}
-            >
-              <li className={styles.logo}>OLIA</li>
-            </NavLink>
+            <li className={styles.logoItem}>
+              <NavLink
+                to="/"
+                viewTransition
+                className={`${styles.list} ${styles.logoLink}`}
+              >
+                OLIA
+              </NavLink>
+            </li>
           )}
+
           <div className={styles.right}>
-            <NavLink to="/shop" viewTransition className={styles.list}>
-              <li>Shop</li>
-            </NavLink>
-            <NavLink to="/about" viewTransition className={styles.list}>
-              <li>About Us</li>
-            </NavLink>
-            <NavLink to="/posts" viewTransition className={styles.list}>
-              <li>Contact</li>
-            </NavLink>
-            <IconContext.Provider value={{ color: "#2a479c", size: "1.5rem" }}>
+            <li className={styles.navItem}>
+              <NavLink to="/shop" viewTransition className={styles.list}>
+                Shop
+              </NavLink>
+            </li>
+
+            <li className={styles.navItem}>
+              <NavLink to="/about" viewTransition className={styles.list}>
+                About Us
+              </NavLink>
+            </li>
+
+            <li className={styles.navItem}>
+              <NavLink to="/posts" viewTransition className={styles.list}>
+                Contact
+              </NavLink>
+            </li>
+
+            <IconContext.Provider value={{ color: "#669c2a", size: "1.5rem" }}>
               <div className={styles.image}>
                 <IoMdCart />
-                {isHidden && (
-                  <ShowCartCount
-                    isHidden={false}
-                    setIsHidden={setIsHidden}
-                    count={count}
-                  />
-                )}
+                <ShowCartCount count={count} />
               </div>
             </IconContext.Provider>
           </div>
+
           <a className={styles.icon} onClick={() => setClicked(!clicked)}>
             <i className="fa fa-bars"></i>
           </a>
         </ul>
       </nav>
-      <Outlet context={[setCount, setIsHidden]} />
+      <Outlet context={[setCount]} />
     </header>
   );
 };

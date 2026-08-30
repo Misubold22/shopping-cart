@@ -9,13 +9,13 @@
 }
 
 .nav {
+  padding: 1.5rem;
   overflow: hidden;
-  background-color: #669c2a;
 
+  background-color: var(--background);
+  padding-block: clamp(0.5rem, 0.1364rem + 1.8182vw, 1.5rem);
   top: 0;
   margin: 0;
-
-  padding-block: clamp(1rem, 0.5rem + 1.5vw, 2rem);
 }
 
 .desktop__nav {
@@ -26,39 +26,45 @@
 }
 
 .nav .list,
-a {
+a,
+.navItem {
   list-style-type: none;
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: var(--text);
   text-align: center;
-
   margin: 0;
   text-decoration: none;
-  font-weight: 800;
-  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: 400;
+  font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
 }
 
 .right {
+  gap: 1.5rem;
   display: flex;
   align-content: center;
   justify-content: flex-end;
-  padding: 0.5rem;
-  gap: 1.5rem;
+  padding-top: clamp(rem, 0.6364rem + 1.8182vw, 2rem);
+  padding-top: 2rem;
+  font-weight: 600;
 }
 
-.logo {
+.logoItem .logoLink {
   font-family: Is;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 1.7727rem + 3.6364vw, 4.5rem);
 
-  font-size: clamp(1.5rem, 1rem + 4vw, 4.5rem);
-  padding: 0;
   letter-spacing: 0.5rem;
   margin: 0;
+  color: var(--brand);
+}
+
+.logoItem {
+  list-style-type: none;
+  text-decoration: none;
 }
 
 ul {
-  margin: 0;
-  padding-block: clamp(1rem, 0.5rem + 1.5vw, 2rem);
   padding-left: 0.5rem;
 }
 
@@ -91,7 +97,7 @@ img {
 }
 
 .nav .list:hover {
-  color: yellow;
+  color: var(--brand);
   cursor: pointer;
 }
 
@@ -100,10 +106,6 @@ img {
 }
 
 @media screen and (max-width: 600px) {
-  .nav .list {
-    display: none;
-  }
-
   .nav a.icon {
     float: right;
     display: block;
@@ -111,14 +113,19 @@ img {
     right: 0;
     top: 0;
   }
+  .nav .list {
+    display: none;
+  }
 
-  .logo {
-    padding-bottom: clamp(0.4375rem, 0.839rem - 1.071vw, 0.625rem);
+  .logoItem .logoLink {
+    display: block;
+
+    padding-bottom: 6px;
   }
 
   .right {
     justify-content: center;
-    padding: 0.37rem;
+    padding-bottom: 1.375rem;
   }
 
   .nav.responsive {
