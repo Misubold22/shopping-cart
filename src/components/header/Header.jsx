@@ -50,6 +50,12 @@ const Header = ({ count, setCount }) => {
             </li>
 
             <li className={styles.navItem}>
+              <NavLink to="/profile" viewTransition className={styles.list}>
+                Profile
+              </NavLink>
+            </li>
+
+            <li className={styles.navItem}>
               <NavLink to="/posts" viewTransition className={styles.list}>
                 Contact
               </NavLink>

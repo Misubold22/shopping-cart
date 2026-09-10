@@ -6,7 +6,6 @@ function About() {
     <>
       <h2>About View</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adip. E about</p>
-      <Footer />
     </>
   );
 }

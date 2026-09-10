@@ -1,0 +1,6 @@
+.detailCard {
+  max-width: clamp(11.25rem, 10.3409rem + 4.5455vw, 13.75rem);
+  box-shadow: 0 2px 7px #dfdfdf;
+  margin: 0 5rem;
+  background: #fafafa;
+}

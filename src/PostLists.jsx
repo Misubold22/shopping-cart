@@ -1,8 +1,11 @@
 // PostLists.jsx
 import { Link } from "react-router";
 import BlogPosts from "./blogPosts";
+import { useOutletContext } from "react-router";
 
 function PostLists() {
+  // const [counts] = useOutletContext();
+  // console.log(counts);
   return (
     <ul>
       {Object.entries(BlogPosts).map(([slug, { title }]) => (

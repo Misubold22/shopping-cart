@@ -7,6 +7,9 @@ import Contact from "./Contact";
 import PostLists from "./PostLists";
 import Post from "./Post";
 import Shop from "./components/shop/Shop.jsx";
+import CardDetail from "./components/detail/CardDetail.jsx";
+import ProductGrid from "./components/ProductGrid/ProductGrid.jsx";
+import fetchJsonWithCache from "./api/fetchJsonWithCache";
 
 const routes = [
   {
@@ -16,7 +19,24 @@ const routes = [
     children: [
       { index: true, element: <Home /> },
 
-      { path: "shop", element: <Shop /> },
+      {
+        path: "/shop",
+        element: <Shop />,
+
+        children: [
+          {
+            index: true,
+            loader: fetchJsonWithCache,
+            element: <ProductGrid />,
+          },
+          {
+            path: "product/:itemIds",
+            loader: fetchJsonWithCache,
+            element: <CardDetail />,
+          },
+        ],
+      },
+
       { path: "about", element: <About /> },
       {
         path: "posts",

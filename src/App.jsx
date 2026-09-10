@@ -3,10 +3,12 @@
 import "./App.css";
 import { useState } from "react";
 import Header from "./components/header/Header.jsx";
+import Footer from "./components/footer/Footer.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
+
   // const handleChange = () => {
   //setIsHidden((prev) => !prev);
   // };
@@ -19,6 +21,7 @@ function App() {
         count={count}
         setCount={setCount}
       />
+      <Footer />
     </div>
   );
 }

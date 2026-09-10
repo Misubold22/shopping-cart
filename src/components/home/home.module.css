@@ -34,6 +34,7 @@
   line-height: 1.2;
   margin-bottom: 0.5rem;
   font-size: clamp(1.8rem, 1.5455rem + 1.2727vw, 2.5rem);
+  letter-spacing: -0.02em;
 }
 
 .tagline {
@@ -162,16 +163,8 @@ img {
   height: auto;
 }
 
-.attribution {
-  font-size: 0.75rem;
-  color: #888;
-  margin-top: 0.25rem;
-  text-align: right;
-}
-
-.attribution a {
-  color: inherit;
-  text-decoration: underline;
+h3 {
+  letter-spacing: -0.01em;
 }
 
 @keyframes ripple_401 {
@@ -187,7 +180,6 @@ img {
     opacity: 0;
   }
 }
-
 @media (max-width: 1000px) {
   .fieldSection {
     flex-direction: column;

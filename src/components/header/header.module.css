@@ -35,8 +35,10 @@ a,
   text-align: center;
   margin: 0;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
+  font-size: clamp(0.9rem, 0.8273rem + 0.3636vw, 1.1rem);
+  letter-spacing: 0.02em;
 }
 
 .right {
@@ -44,7 +46,7 @@ a,
   display: flex;
   align-content: center;
   justify-content: flex-end;
-  padding-top: clamp(rem, 0.6364rem + 1.8182vw, 2rem);
+
   padding-top: 2rem;
   font-weight: 600;
 }

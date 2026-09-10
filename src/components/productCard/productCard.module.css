@@ -1,0 +1,74 @@
+.productCardIllustration {
+  color: var(--text);
+}
+
+.card {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  font-family: Ceoma, "Sora", sans-serif;
+  display: block;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 7px #dfdfdf;
+  margin: 10px auto;
+  box-shadow: 0 2px 7px #dfdfdf;
+  background: #fafafa;
+}
+
+.cardImageWrap {
+  display: flex;
+  flex-wrap: wrap;
+  background: #f0f0f0;
+}
+
+.cardImageWrap img {
+  flex: 1 1 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.cardTitle {
+  font-weight: 600;
+  display: block;
+  color: #363636;
+  text-wrap: nowrap;
+  text-align: center;
+  font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
+  padding: 0.625rem 0; /* (sets left/right to 0) */
+}
+
+.cardFooter {
+  padding: 0 1.875rem; /* (sets top/bottom to 0) */
+}
+
+.cardFooterDetails {
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 0;
+}
+
+.cardPrice {
+  font-size: clamp(0.75rem, 0.7045rem + 0.2273vw, 0.875rem);
+  color: var(--text);
+  font-weight: 400;
+}
+
+.cardAddBtn {
+  display: inline-block;
+  margin-left: 5px;
+  color: var(--text);
+  transition: 0.3s;
+  font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
+  padding: 0.4rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cardAddBtn:hover {
+  color: var(--brand);
+}
