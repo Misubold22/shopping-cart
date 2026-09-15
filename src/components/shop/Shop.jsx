@@ -1,22 +1,33 @@
 // Shop.jsx
 import { Outlet, useOutletContext } from "react-router";
+import { useState } from "react";
+import { useLocation } from "react-router";
+import { AnimatePresence } from "framer-motion";
 
 function Shop() {
   const [setCount] = useOutletContext();
+  const [clicked, setClicked] = useState(false);
 
+  const location = useLocation();
   const handleClick = (e) => {
     // console.log(e.target);
     setCount((count) => count + 1);
+    //setClicked(!clicked);
     e.preventDefault();
   };
 
+  const handleDetailClick = (e) => {
+    console.log("bosss");
+
+    setClicked(!clicked);
+  };
+
   return (
-    <>
-      <section className="products-grid" aria-label="Products list">
-        {" "}
+    <div className="shop">
+      <AnimatePresence mode="wait">
         <Outlet context={{ handleClick }} />
-      </section>
-    </>
+      </AnimatePresence>
+    </div>
   );
 }
 

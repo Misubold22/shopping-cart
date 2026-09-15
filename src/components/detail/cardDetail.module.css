@@ -1,6 +1,268 @@
-.detailCard {
-  max-width: clamp(11.25rem, 10.3409rem + 4.5455vw, 13.75rem);
+main {
+  margin: 3rem;
+
+  background-attachment: fixed;
+}
+
+.card__body {
+  padding: 0 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  gap: 5rem;
+  justify-content: center;
+}
+
+.rightHalf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem;
+}
+.leftHalf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 25rem;
+}
+
+.card__body .featured_text .h1 {
+  font-weight: 600;
+  font-family: "Montserrat";
+  text-wrap: wrap;
+  font-size: 30px;
+  font-size: clamp(1.625rem, 1.5341rem + 0.4545vw, 1.875rem);
+  line-height: 5px;
+  color: var(--text);
+}
+
+.card__body .featured_text .p {
+  margin: 0;
+  padding: 0;
+}
+
+.card__body .featured_text .p.price {
+  font-family: "Montserrat";
+  color: #252525;
+  font-size: 30px;
+}
+
+.card__body .image {
+  width: 100%;
+  max-width: 25rem;
+  margin-inline: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px;
   box-shadow: 0 2px 7px #dfdfdf;
-  margin: 0 5rem;
+  margin: 10px auto;
+  box-shadow: 0 2px 7px #dfdfdf;
   background: #fafafa;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--brand);
+  background: #f0f0f0;
+  aspect-ratio: 1 / 1; /* or whatever matches your product photos */
+}
+
+.card__body .image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.card__body .description {
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card__body .description .p {
+  margin: 0;
+  font-family: "Montserrat";
+  font-weight: 400;
+
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.card__body span.stock {
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.card__body .reviews .stars {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+}
+
+.card__body .reviews .stars > li {
+  display: inline-block;
+}
+
+/* Targeting FontAwesome icon class globally */
+.card__body .reviews .stars > li :global(.fa) {
+  color: #f7c01b;
+}
+.card__body .reviews > span {
+  font-family: "Montserrat";
+  font-size: 14px;
+  margin-left: 5px;
+  color: #555;
+}
+
+.card__footer {
+  padding: 30px 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: relative;
+  margin-top: 5rem;
+}
+
+.card__footer::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 3px;
+  background: var(--brand);
+  background: linear-gradient(
+    to right,
+    var(--brand) 0%,
+    var(--brand) 20%,
+    #ddd 20%,
+    #ddd 100%
+  );
+}
+
+.minus,
+.plus {
+  width: 38px;
+  height: 38px;
+  background: #f2f2f2;
+  border-radius: 0;
+  padding: 5px;
+  color: #f0f0f0;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--brand);
+}
+.input {
+  height: 30px;
+  width: 50px;
+  text-align: center;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #f0f0f0;
+}
+
+/* From Uiverse.io by vinodjangid07 */
+.CartBtn {
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 0;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+
+  position: relative;
+  background-color: #669c2a;
+  margin-top: 1.7rem;
+  color: white;
+}
+
+.IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 1.875rem;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.5s;
+}
+
+.icon {
+  border-radius: 1px;
+  color: white;
+}
+
+.text {
+  height: 100%;
+  text-align: center;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  transition-duration: 0.5s;
+
+  font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(3.325rem);
+  border-radius: 2.5rem;
+  transition-duration: 0.5s;
+}
+
+.CartBtn:hover,
+.plus:hover,
+.minus:hover {
+  background-color: #5a8825;
+}
+
+.CartBtn:hover .text {
+  transform: translate(10px, 0px);
+  transition-duration: 0.5s;
+}
+
+@media (max-width: 768px) {
+  .card__body .image {
+    max-width: 20rem;
+  }
+  .card__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .rightHalf {
+    align-items: center;
+    padding-left: 0rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stars {
+    transform: scale(0.75);
+  }
 }

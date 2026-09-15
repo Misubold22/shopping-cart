@@ -4,11 +4,19 @@ import introPic2 from "../../assets/fruitsAndVegetables.jpg";
 import fieldPic from "../../assets/field.jpg";
 import { NavLink } from "react-router";
 import { Suspense } from "react";
-import Spinner from "../../Spinner";
+import Spinner from "../spinner/Spinner.jsx";
+
+//import pageVariants from "../pageVariants/pageVariants.js";
+import { motion } from "framer-motion";
+const ease = [0.16, 1, 0.3, 1];
 
 function Home() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease }}
+    >
       <Suspense fallback={<Spinner />}>
         <section className={styles.intro}>
           <h1 className={styles.introHeader}>organic market</h1>
@@ -17,7 +25,7 @@ function Home() {
             Fresh, thoughtfully sourced food for everyday living. Simple
             products. Honest ingredients. Less waste.
           </p>
-          <NavLink to="shop" viewTransition>
+          <NavLink to="shop">
             {" "}
             <button className={styles.Button}>Browse Shop</button>
           </NavLink>
@@ -81,7 +89,7 @@ function Home() {
           />
         </section>
       </Suspense>
-    </>
+    </motion.div>
   );
 }
 

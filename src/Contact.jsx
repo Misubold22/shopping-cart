@@ -1,15 +1,16 @@
 // Posts.jsx
 import { Outlet } from "react-router";
-import Footer from "./components/footer/Footer.jsx";
+
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function Contact() {
   const [counts, setCounts] = useState(5);
   return (
-    <div>
+    <motion.div animate={{ scale: 1.2 }} transition={{ duration: 0.5 }}>
       <h2>Blog</h2>
       <Outlet context={[counts]} />
-    </div>
+    </motion.div>
   );
 }
 

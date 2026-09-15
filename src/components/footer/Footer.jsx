@@ -1,9 +1,15 @@
 import { NavLink } from "react-router";
 import styles from "./footer.module.css";
+import { motion } from "framer-motion";
 
 function Footer() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+    >
       <footer>
         <section className={styles.newsletter}>
           <div>
@@ -90,7 +96,7 @@ function Footer() {
           © 2026 OLIA Market. Good food, simply.
         </div>
       </footer>{" "}
-    </>
+    </motion.div>
   );
 }
 

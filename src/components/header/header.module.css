@@ -35,10 +35,11 @@ a,
   text-align: center;
   margin: 0;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
   font-size: clamp(0.9rem, 0.8273rem + 0.3636vw, 1.1rem);
   letter-spacing: 0.02em;
+  font-family: "Montserrat";
 }
 
 .right {

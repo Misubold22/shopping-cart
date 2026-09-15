@@ -1,7 +1,3 @@
-.productCardIllustration {
-  color: var(--text);
-}
-
 .card {
   cursor: pointer;
   margin: 0;
@@ -14,6 +10,10 @@
   margin: 10px auto;
   box-shadow: 0 2px 7px #dfdfdf;
   background: #fafafa;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--brand);
 }
 
 .cardImageWrap {
@@ -31,38 +31,40 @@
 .cardTitle {
   font-weight: 600;
   display: block;
-  color: #363636;
-  text-wrap: nowrap;
+  color: var(--text);
   text-align: center;
   font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
-  padding: 0.625rem 0; /* (sets left/right to 0) */
+  padding: 0.925rem 0; /* (sets left/right to 0) */
+  font-family: "Montserrat", "Sora", sans-serif;
 }
-
 .cardFooter {
   padding: 0 1.875rem; /* (sets top/bottom to 0) */
 }
 
 .cardFooterDetails {
   overflow: hidden;
-  border-top: 1px solid #eee;
+
+  border-top: 1px solid var(--brand);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem 0;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+  padding: 1.55rem 0;
 }
 
 .cardPrice {
-  font-size: clamp(0.75rem, 0.7045rem + 0.2273vw, 0.875rem);
-  color: var(--text);
+  font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
+  color: var(--brand);
   font-weight: 400;
+  padding-left: 0;
+  margin-top: 3px;
 }
 
 .cardAddBtn {
   display: inline-block;
   margin-left: 5px;
-  color: var(--text);
+  color: var(--brand);
   transition: 0.3s;
-  font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
+  font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
   padding: 0.4rem;
   border: 0;
   background: transparent;
@@ -70,5 +72,5 @@
 }
 
 .cardAddBtn:hover {
-  color: var(--brand);
+  color: #528022;
 }

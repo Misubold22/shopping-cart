@@ -4,6 +4,7 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/footer/Footer.jsx";
+import GoToTop from "./components/goToTop/GoToTop.js";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,7 +15,7 @@ function App() {
   // };
 
   return (
-    <div>
+    <GoToTop>
       <Header
         isHidden={isHidden}
         setIsHidden={setIsHidden}
@@ -22,7 +23,7 @@ function App() {
         setCount={setCount}
       />
       <Footer />
-    </div>
+    </GoToTop>
   );
 }
 

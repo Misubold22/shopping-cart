@@ -26,11 +26,7 @@ const Header = ({ count, setCount }) => {
         <ul>
           {!clicked && (
             <li className={styles.logoItem}>
-              <NavLink
-                to="/"
-                viewTransition
-                className={`${styles.list} ${styles.logoLink}`}
-              >
+              <NavLink to="/" className={`${styles.list} ${styles.logoLink}`}>
                 OLIA
               </NavLink>
             </li>
@@ -44,19 +40,19 @@ const Header = ({ count, setCount }) => {
             </li>
 
             <li className={styles.navItem}>
-              <NavLink to="/about" viewTransition className={styles.list}>
+              <NavLink to="/about" className={styles.list}>
                 About Us
               </NavLink>
             </li>
 
             <li className={styles.navItem}>
-              <NavLink to="/profile" viewTransition className={styles.list}>
+              <NavLink to="/profile" className={styles.list}>
                 Profile
               </NavLink>
             </li>
 
             <li className={styles.navItem}>
-              <NavLink to="/posts" viewTransition className={styles.list}>
+              <NavLink to="/posts" className={styles.list}>
                 Contact
               </NavLink>
             </li>
