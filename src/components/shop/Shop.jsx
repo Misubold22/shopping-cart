@@ -1,14 +1,12 @@
 // Shop.jsx
 import { Outlet, useOutletContext } from "react-router";
 import { useState } from "react";
-import { useLocation } from "react-router";
 import { AnimatePresence } from "framer-motion";
 
 function Shop() {
   const [setCount] = useOutletContext();
   const [clicked, setClicked] = useState(false);
 
-  const location = useLocation();
   const handleClick = (e) => {
     // console.log(e.target);
     setCount((count) => count + 1);

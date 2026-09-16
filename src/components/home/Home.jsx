@@ -5,9 +5,10 @@ import fieldPic from "../../assets/field.jpg";
 import { NavLink } from "react-router";
 import { Suspense } from "react";
 import Spinner from "../spinner/Spinner.jsx";
+import { motion } from "motion/react";
 
 //import pageVariants from "../pageVariants/pageVariants.js";
-import { motion } from "framer-motion";
+//import { motion } from "framer-motion";
 const ease = [0.16, 1, 0.3, 1];
 
 function Home() {

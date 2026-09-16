@@ -8,7 +8,7 @@ import PostLists from "./PostLists";
 import Post from "./Post";
 import Shop from "./components/shop/Shop.jsx";
 import Spinner from "./components/spinner/Spinner.jsx";
-import CardDetail from "./components/detail/CardDetail.jsx";
+import ProductDetail from "./components/productDetail/ProductDetail.jsx";
 import ProductGrid from "./components/productGrid/ProductGrid.jsx";
 import fetchJsonWithCache from "./api/fetchJsonWithCache";
 
@@ -34,7 +34,7 @@ const routes = [
           {
             path: "product/:itemIds",
             loader: fetchJsonWithCache,
-            element: <CardDetail />,
+            element: <ProductDetail />,
           },
         ],
       },

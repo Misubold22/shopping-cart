@@ -19,7 +19,7 @@ function ProductRating({ rating }) {
   );
 }
 
-const ProductDetail = () => {
+const CardDetail = () => {
   let { itemIds } = useParams();
   const itemId = Number(itemIds);
   const fetchJson = useLoaderData();
@@ -107,4 +107,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default CardDetail;
