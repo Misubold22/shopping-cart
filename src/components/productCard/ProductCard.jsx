@@ -19,37 +19,47 @@ const cardVariants = {
   },
 };
 
-const ProductCard = ({ product, handleClick }) => (
-  <NavLink to={`product/${product.id}`}>
-    <Suspense fallback={<Spinner />}>
-      <motion.section
-        variants={cardVariants}
-        className={styles.productsGrid}
-        aria-label="Products list"
-        key="grids"
-      >
-        <article className={styles.card}>
-          <div className={styles.cardImageWrap}>
-            <img alt="" src={product.images[0]} />
-          </div>
-          <h2 className={styles.cardTitle}>{product.title}</h2>
-          <div className={styles.cardFooter}>
-            <div className={styles.cardFooterDetails}>
-              <div className={styles.cardPrice}>${product.price}</div>
-              <button
-                className={styles.cardAddBtn}
-                type="button"
-                onClick={handleClick}
-                aria-label="Add product to cart"
-              >
-                <IoMdCart />
-              </button>
+const ProductCard = ({ product, handleBuy }) => {
+  const submitBoughtProduct = (e, product) => {
+    e.preventDefault();
+    const defaultProductQuantity = 1;
+    handleBuy(product, defaultProductQuantity);
+  };
+
+  return (
+    <NavLink to={`product/${product.id}`}>
+      <Suspense fallback={<Spinner />}>
+        <motion.section
+          variants={cardVariants}
+          className={styles.productsGrid}
+          aria-label="Products list"
+          key="grids"
+        >
+          <article className={styles.card}>
+            <div className={styles.cardImageWrap}>
+              <img alt="" src={product.images[0]} />
             </div>
-          </div>
-        </article>
-      </motion.section>
-    </Suspense>
-  </NavLink>
-);
+            <h2 className={styles.cardTitle}>{product.title}</h2>
+            <div className={styles.cardFooter}>
+              <div className={styles.cardFooterDetails}>
+                <div className={styles.cardPrice}>${product.price}</div>
+                <button
+                  className={styles.cardAddBtn}
+                  type="button"
+                  //onClick={handleClick}
+                  aria-label="Add product to cart"
+                  value={product}
+                  onClick={(e) => submitBoughtProduct(e, product)}
+                >
+                  <IoMdCart />
+                </button>
+              </div>
+            </div>
+          </article>
+        </motion.section>
+      </Suspense>
+    </NavLink>
+  );
+};
 
 export default ProductCard;

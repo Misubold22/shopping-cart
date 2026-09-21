@@ -2,6 +2,7 @@
 import App from "./App";
 import Home from "./components/home/Home.jsx";
 import About from "./About";
+import Cart from "./components/cart/Cart.jsx";
 import NoMatch from "./NoMatch";
 import Contact from "./Contact";
 import PostLists from "./PostLists";
@@ -32,7 +33,7 @@ const routes = [
             element: <ProductGrid />,
           },
           {
-            path: "product/:itemIds",
+            path: "product/:productId",
             loader: fetchJsonWithCache,
             element: <ProductDetail />,
           },
@@ -40,6 +41,7 @@ const routes = [
       },
 
       { path: "about", element: <About /> },
+      { path: "cart", element: <Cart /> },
       {
         path: "posts",
         element: <Contact />,

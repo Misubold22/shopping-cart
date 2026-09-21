@@ -21,10 +21,10 @@ const containerVariants = {
 };
 
 const ProductGrid = () => {
-  const { handleClick } = useOutletContext();
+  const { handleBuy } = useOutletContext();
   const fetchJson = useLoaderData();
   const products = fetchJson.products;
-  console.log(products);
+  //console.log(products);
   return (
     <motion.section
       variants={containerVariants}
@@ -36,11 +36,7 @@ const ProductGrid = () => {
       exit="exit"
     >
       {removeUnwantedProducts(products).map((product) => (
-        <ProductCard
-          key={product.id}
-          handleClick={handleClick}
-          product={product}
-        />
+        <ProductCard key={product.id} handleBuy={handleBuy} product={product} />
       ))}
     </motion.section>
   );

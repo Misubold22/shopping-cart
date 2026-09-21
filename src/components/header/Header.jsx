@@ -6,13 +6,18 @@ import { NavLink, Outlet } from "react-router";
 import { IoMdCart } from "react-icons/io";
 import { IconContext } from "react-icons";
 
-const ShowCartCount = ({ count }) => {
+const ShowCartCount = ({ productCount }) => {
   // () => setIsHidden(false);
-  return <div className={styles.orderCount}>{count}</div>;
+  return <div className={styles.orderCount}>{productCount}</div>;
 };
 
-const Header = ({ count, setCount }) => {
+const Header = ({ productCount, setProductCount }) => {
   const [clicked, setClicked] = useState(false);
+  const [boughtProducts, setBoughtProducts] = useState([]);
+
+  const handleClick = () => {
+    console.log("sal din header");
+  };
 
   return (
     <header className={styles.header}>
@@ -56,13 +61,16 @@ const Header = ({ count, setCount }) => {
                 Contact
               </NavLink>
             </li>
-
-            <IconContext.Provider value={{ color: "#669c2a", size: "1.5rem" }}>
-              <div className={styles.image}>
-                <IoMdCart />
-                <ShowCartCount count={count} />
-              </div>
-            </IconContext.Provider>
+            <NavLink to="/cart">
+              <IconContext.Provider
+                value={{ color: "#669c2a", size: "1.5rem" }}
+              >
+                <button className={styles.cartBtn} onClick={handleClick}>
+                  <IoMdCart />
+                  <ShowCartCount productCount={productCount} />
+                </button>
+              </IconContext.Provider>
+            </NavLink>
           </div>
 
           <a className={styles.icon} onClick={() => setClicked(!clicked)}>
@@ -70,7 +78,13 @@ const Header = ({ count, setCount }) => {
           </a>
         </ul>
       </nav>
-      <Outlet context={[setCount]} />
+      <Outlet
+        context={{
+          setProductCount,
+          boughtProducts,
+          setBoughtProducts,
+        }}
+      />
     </header>
   );
 };

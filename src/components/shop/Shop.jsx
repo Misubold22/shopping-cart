@@ -1,29 +1,39 @@
 // Shop.jsx
 import { Outlet, useOutletContext } from "react-router";
-import { useState } from "react";
+import createOrderedProduct from "../../utils/createOrderedProduct";
+import increaseProductQuantity from "../../data/increaseProductQuantity";
 import { AnimatePresence } from "framer-motion";
 
 function Shop() {
-  const [setCount] = useOutletContext();
-  const [clicked, setClicked] = useState(false);
+  const { setProductCount, boughtProducts, setBoughtProducts } =
+    useOutletContext();
+  const addBoughtProduct = (orderedProduct) => {
+    setBoughtProducts((prevProducts) => [...prevProducts, orderedProduct]);
+  };
+  const handleBuy = (product, quantity) => {
+    const productAlreadyBought = boughtProducts.some(
+      (p) => p.id === product.id,
+    );
 
-  const handleClick = (e) => {
-    // console.log(e.target);
-    setCount((count) => count + 1);
-    //setClicked(!clicked);
-    e.preventDefault();
+    if (productAlreadyBought) {
+      const increasedProductQuantity = increaseProductQuantity(
+        boughtProducts,
+        product,
+        quantity,
+      );
+      setBoughtProducts(increasedProductQuantity);
+      return;
+    }
+    addBoughtProduct(createOrderedProduct(product, quantity));
+    setProductCount((count) => count + 1);
   };
 
-  const handleDetailClick = (e) => {
-    console.log("bosss");
-
-    setClicked(!clicked);
-  };
+  console.log(boughtProducts);
 
   return (
     <div className="shop">
       <AnimatePresence mode="wait">
-        <Outlet context={{ handleClick }} />
+        <Outlet context={{ handleBuy }} />
       </AnimatePresence>
     </div>
   );

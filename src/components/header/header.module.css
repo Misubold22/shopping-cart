@@ -71,11 +71,14 @@ ul {
   padding-left: 0.5rem;
 }
 
-.image {
+.cartBtn {
   padding: 0;
   margin: 0;
   display: flex;
   align-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .orderCount {

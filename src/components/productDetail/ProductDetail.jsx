@@ -3,9 +3,10 @@ import { useLoaderData } from "react-router";
 import styles from "./productDetail.module.css";
 import findProductById from "../../utils/findProductById";
 import pageVariants from "../pageVariants/pageVariants.js";
-//import { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Rating } from "react-simple-star-rating";
+import { useOutletContext } from "react-router";
 
 function ProductRating({ rating }) {
   return (
@@ -20,12 +21,23 @@ function ProductRating({ rating }) {
 }
 
 const CardDetail = () => {
-  let { itemIds } = useParams();
-  const itemId = Number(itemIds);
+  let { productId } = useParams();
+  const clickedProductId = Number(productId);
   const fetchJson = useLoaderData();
-  const products = fetchJson.products;
-  const product = findProductById(products, itemId);
-  console.log(product);
+  const allProducts = fetchJson.products;
+  const clickedProduct = findProductById(allProducts, clickedProductId);
+  const { handleBuy } = useOutletContext();
+  const [productQuantity, setProductQuantity] = useState(1);
+
+  const incrementProductQuantity = () => {
+    setProductQuantity(productQuantity + 1);
+  };
+
+  const decrementProductQuantity = () => {
+    if (productQuantity !== 1) {
+      setProductQuantity(productQuantity - 1);
+    }
+  };
 
   return (
     <>
@@ -34,31 +46,33 @@ const CardDetail = () => {
         variants={pageVariants}
         initial="hidden"
         animate="visible"
-        key={product.id}
+        key={clickedProduct.id}
       >
         <article className={styles.card}>
           <div className={styles.cardBody}>
             <div className={styles.leftHalf}>
               <div className={styles.cardImageWrap}>
-                <img alt="" src={product.images[0]} />
+                <img alt="" src={clickedProduct.images[0]} />
               </div>
             </div>
 
             <div className={styles.rightHalf}>
-              <h1 className={styles.cardTitle}>{product.title}</h1>
+              <h1 className={styles.cardTitle}>{clickedProduct.title}</h1>
               <div className={styles.cardDescriptionWrap}>
-                <p className={styles.cardDescription}>{product.description}</p>
+                <p className={styles.cardDescription}>
+                  {clickedProduct.description}
+                </p>
               </div>
-              <p className={styles.cardPrice}>${product.price}</p>
+              <p className={styles.cardPrice}>${clickedProduct.price}</p>
               <span className={styles.cardStock}>
                 <i className="fa fa-pen" />
-                {product.availabilityStatus}
+                {clickedProduct.availabilityStatus}
               </span>
               <div className={styles.ratingSummary}>
                 <ul className={styles.rating}>
                   <li>
                     <ProductRating
-                      rating={product.rating}
+                      rating={clickedProduct.rating}
                       readonly
                       size={18}
                       allowFraction
@@ -66,25 +80,36 @@ const CardDetail = () => {
                   </li>
                 </ul>
                 <span className={styles.reviewCount}>
-                  {product.reviews.length} reviews
+                  {clickedProduct.reviews.length} reviews
                 </span>
               </div>
               <div className={styles.quantity}>
-                <button type="button" className={styles.decrease}>
+                <button
+                  type="button"
+                  className={styles.decrease}
+                  onClick={decrementProductQuantity}
+                >
                   -
                 </button>
                 <input
                   className={styles.quantityInput}
-                  defaultValue="1"
                   type="text"
                   readOnly
+                  value={productQuantity}
                 />
-                <button type="button" className={styles.increase}>
+                <button
+                  type="button"
+                  className={styles.increase}
+                  onClick={incrementProductQuantity}
+                >
                   +
                 </button>
               </div>
 
-              <button className={styles.CartBtn}>
+              <button
+                className={styles.CartBtn}
+                onClick={() => handleBuy(clickedProduct, productQuantity)}
+              >
                 <span className={styles.btnIconContainer}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

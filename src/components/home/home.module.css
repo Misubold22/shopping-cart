@@ -20,11 +20,16 @@
   --form-button-text: #ffffff;
 }
 
-.intro {
+.infoContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 0.5rem;
+  margin: 3.5rem;
+}
+
+.intro {
   color: var(--text);
   margin: 2.5rem;
 }
@@ -100,13 +105,26 @@
 .pictureContainer {
   display: flex;
   margin: 0;
-  margin-top: 4rem;
+  margin-top: 5rem;
   gap: 2.5rem;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.textContainer {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.introImageContainer {
+  width: 100%;
+  max-width: 40rem;
 }
 
 .secondaryImageContainer {
+  width: 100%;
+  max-width: 40rem;
   margin-top: 0.7rem;
   margin-bottom: 0.7rem;
 }
@@ -150,7 +168,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-wrap: wrap;
 }
 
@@ -185,7 +202,6 @@ h3 {
   .fieldSection {
     flex-direction: column;
   }
-
   .fieldDescription {
     padding-bottom: 2rem;
   }

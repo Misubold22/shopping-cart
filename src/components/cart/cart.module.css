@@ -14,22 +14,7 @@
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--brand);
-  width: 100%;
-  max-width: 15rem;
-}
-
-.cardImageWrap {
-  display: flex;
-  flex-wrap: wrap;
-  background: #f0f0f0;
-  width: 100%;
-  max-width: 15rem;
-}
-
-.cardImageWrap img {
-  flex: 1 1 100%;
-  max-width: 100%;
-  height: auto;
+  max-width: 20rem;
 }
 
 .cardTitle {
@@ -63,18 +48,44 @@
   margin-top: 3px;
 }
 
-.cardAddBtn {
+.decrease,
+.increase {
+  width: 2.063rem;
+  height: 2.063rem;
+  background: #f2f2f2;
+  border-radius: 0;
+  border: none;
+  padding: 5px;
+  color: #f0f0f0;
   display: inline-block;
-  margin-left: 5px;
-  color: var(--brand);
-  transition: 0.3s;
-  font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
-  padding: 0.4rem;
-  border: 0;
-  background: transparent;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
   cursor: pointer;
+  background-color: var(--brand);
 }
 
-.cardAddBtn:hover {
-  color: #528022;
+.increase {
+  padding-top: 5px;
+}
+
+.decrease {
+  padding-bottom: 1.563rem;
+}
+
+.quantityInput {
+  height: 1.875rem;
+  width: 3.125rem;
+  text-align: center;
+  font-size: clamp(0.75rem, 0.6591rem + 0.4545vw, 1rem);
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #f0f0f0;
+}
+
+.quantityInput:focus {
+  outline: none;
 }

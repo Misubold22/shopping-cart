@@ -7,7 +7,7 @@ import Footer from "./components/footer/Footer.jsx";
 import GoToTop from "./components/goToTop/GoToTop.js";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [productCount, setProductCount] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
 
   // const handleChange = () => {
@@ -19,8 +19,8 @@ function App() {
       <Header
         isHidden={isHidden}
         setIsHidden={setIsHidden}
-        count={count}
-        setCount={setCount}
+        productCount={productCount}
+        setProductCount={setProductCount}
       />
       <Footer />
     </GoToTop>
