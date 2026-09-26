@@ -44,7 +44,7 @@
   margin-inline: auto;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+
   border-radius: 12px;
   box-shadow: 0 2px 7px #dfdfdf;
   margin: 10px auto;
@@ -243,6 +243,11 @@
 .CartBtn:hover .btnText {
   transform: translate(10px, 0px);
   transition-duration: 0.5s;
+}
+
+.CartBtn:active {
+  background-color: #5a8825;
+  transform: translateY(-5px);
 }
 
 @media (max-width: 768px) {

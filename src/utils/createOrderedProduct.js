@@ -4,6 +4,7 @@ function createOrderedProduct(product, quantity) {
     price: product.price,
     id: product.id,
     quantity,
+    image: product.images[0],
   };
   return orderedProduct;
 }

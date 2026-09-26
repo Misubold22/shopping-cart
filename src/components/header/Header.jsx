@@ -5,6 +5,8 @@ import { NavLink, Outlet } from "react-router";
 //import basketIcon from "../../assets/shopping-bag.png";
 import { IoMdCart } from "react-icons/io";
 import { IconContext } from "react-icons";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ShowCartCount = ({ productCount }) => {
   // () => setIsHidden(false);
@@ -14,10 +16,6 @@ const ShowCartCount = ({ productCount }) => {
 const Header = ({ productCount, setProductCount }) => {
   const [clicked, setClicked] = useState(false);
   const [boughtProducts, setBoughtProducts] = useState([]);
-
-  const handleClick = () => {
-    console.log("sal din header");
-  };
 
   return (
     <header className={styles.header}>
@@ -65,7 +63,7 @@ const Header = ({ productCount, setProductCount }) => {
               <IconContext.Provider
                 value={{ color: "#669c2a", size: "1.5rem" }}
               >
-                <button className={styles.cartBtn} onClick={handleClick}>
+                <button className={styles.cartBtn}>
                   <IoMdCart />
                   <ShowCartCount productCount={productCount} />
                 </button>
@@ -78,6 +76,7 @@ const Header = ({ productCount, setProductCount }) => {
           </a>
         </ul>
       </nav>
+
       <Outlet
         context={{
           setProductCount,

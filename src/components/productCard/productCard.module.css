@@ -77,4 +77,10 @@
 
 .cardAddBtn:hover {
   color: #528022;
+  transform: translateY(-2px);
+}
+
+.cardAddBtn:active {
+  color: #528022;
+  transform: translateY(-5px);
 }

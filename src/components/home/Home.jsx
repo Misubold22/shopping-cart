@@ -5,6 +5,7 @@ import fieldPic from "../../assets/field.jpg";
 import { NavLink } from "react-router";
 import { Suspense } from "react";
 import Spinner from "../spinner/Spinner.jsx";
+import ShopButton from "../shopButton/ShopButton.jsx";
 import { motion } from "motion/react";
 
 //import pageVariants from "../pageVariants/pageVariants.js";
@@ -27,11 +28,7 @@ function Home() {
               Fresh, thoughtfully sourced food for everyday living. Simple
               products. Honest ingredients. Less waste.
             </p>
-
-            <NavLink to="shop">
-              {" "}
-              <button className={styles.Button}>Browse Shop</button>
-            </NavLink>
+            <ShopButton />
           </div>
           <section className={styles.pictureContainer}>
             <div className={styles.introImageContainer}>
@@ -62,12 +59,12 @@ function Home() {
                   From produce to pantry, chosen with care.
                 </p>
               </div>
-            </div>
+            </div>{" "}
           </section>
         </section>
         <section className={styles.fieldSection}>
           <div className={styles.fieldDescription}>
-            <h3>WHAT WE BELIEVE</h3>
+            <h3 className={styles.mottoHeader}>WHAT WE BELIEVE</h3>
             <h4 className={styles.fieldHeadline}>
               {" "}
               Good food starts with good ingredients.
@@ -88,6 +85,7 @@ function Home() {
           </div>
           <img
             src={fieldPic}
+            loading="lazy"
             alt="Fresh fruits and vegetables"
             className={styles.fieldImg}
           />

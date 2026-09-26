@@ -38,7 +38,7 @@
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0.5rem;
-  font-size: clamp(1.8rem, 1.5455rem + 1.2727vw, 2.5rem);
+  font-size: clamp(1.5rem, 1.1364rem + 1.8182vw, 2.5rem);
   letter-spacing: -0.02em;
 }
 
@@ -57,76 +57,13 @@
   margin-bottom: 2.5rem;
 }
 
-.Button {
-  background-color: #669c2a;
-  border: none;
-  color: white;
-  padding: clamp(0.5rem, 0.4455rem + 0.2727vw, 0.65rem)
-    clamp(1rem, 0.8182rem + 0.9091vw, 1.5rem);
-  font-size: clamp(0.8rem, 0.7rem + 1vw, 1rem);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
-  border-radius: 8px;
-  border-radius: 0;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.2s ease;
-}
-
-.Button:hover {
-  background-color: #5a8825;
-}
-
-.Button:after {
-  content: "";
-  background-color: rgba(255, 255, 255, 0.2);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-}
-
-.Button:hover:after {
-  animation: ripple_401 1s ease-out;
-}
-
-.Button:active {
-  background-color: #4d7620;
-}
-
 .pictureContainer {
   display: flex;
   margin: 0;
   margin-top: 5rem;
-  gap: 2.5rem;
+  gap: 3.5rem;
   justify-content: center;
   align-items: center;
-  width: 100%;
-}
-
-.textContainer {
-  width: 100%;
-  max-width: 40rem;
-}
-
-.introImageContainer {
-  width: 100%;
-  max-width: 40rem;
-}
-
-.secondaryImageContainer {
-  width: 100%;
-  max-width: 40rem;
-  margin-top: 0.7rem;
-  margin-bottom: 0.7rem;
 }
 
 .imgHeadline,
@@ -148,10 +85,8 @@
   font-weight: 600;
 }
 
-img {
-  width: 100%;
-  object-fit: cover;
-  height: auto;
+.textContainer {
+  max-width: 40rem;
 }
 
 .introImage {
@@ -159,6 +94,17 @@ img {
 }
 .secondaryImage {
   aspect-ratio: 16 / 14;
+}
+
+.introImageContainer {
+  max-width: 40rem;
+}
+.imgDescription {
+}
+
+.secondaryImageContainer {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
 }
 
 .fieldSection {
@@ -181,8 +127,9 @@ img {
   height: auto;
 }
 
-h3 {
+.mottoHeader {
   letter-spacing: -0.01em;
+  font-size: clamp(1rem, 0.8182rem + 0.9091vw, 1.5rem);
 }
 
 @keyframes ripple_401 {
