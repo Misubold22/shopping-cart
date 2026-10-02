@@ -20,10 +20,10 @@ const cardVariants = {
 };
 
 const ProductCard = ({ product, handleBuy }) => {
-  const submitBoughtProduct = (e, product) => {
+  const submitBoughtProduct = (e, product, id) => {
     e.preventDefault();
     const defaultProductQuantity = 1;
-    handleBuy(product, defaultProductQuantity);
+    handleBuy(product, defaultProductQuantity, id);
   };
 
   return (
@@ -46,10 +46,9 @@ const ProductCard = ({ product, handleBuy }) => {
                 <button
                   className={styles.cardAddBtn}
                   type="button"
-                  //onClick={handleClick}
                   aria-label="Add product to cart"
                   value={product}
-                  onClick={(e) => submitBoughtProduct(e, product)}
+                  onClick={(e) => submitBoughtProduct(e, product, product.id)}
                 >
                   <IoMdCart />
                 </button>

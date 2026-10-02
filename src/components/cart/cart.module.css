@@ -77,12 +77,14 @@
   height: 272px;
   width: 25rem;
   padding: 0 1rem;
+  letter-spacing: 0.5px;
 }
 
 .row,
 .rowDelivery,
 .rowDiscount,
-.rowTotal {
+.rowTotal,
+.rowTax {
   display: flex;
   justify-content: space-between;
   color: var(--text);

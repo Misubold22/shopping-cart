@@ -30,12 +30,12 @@ const CardDetail = () => {
   const [productQuantity, setProductQuantity] = useState(1);
 
   const incrementProductQuantity = () => {
-    setProductQuantity(productQuantity + 1);
+    setProductQuantity((current) => current + 1);
   };
 
   const decrementProductQuantity = () => {
     if (productQuantity !== 1) {
-      setProductQuantity(productQuantity - 1);
+      setProductQuantity((current) => current - 1);
     }
   };
 
@@ -108,7 +108,9 @@ const CardDetail = () => {
 
               <button
                 className={styles.CartBtn}
-                onClick={() => handleBuy(clickedProduct, productQuantity)}
+                onClick={() =>
+                  handleBuy(clickedProduct, productQuantity, clickedProduct.id)
+                }
               >
                 <span className={styles.btnIconContainer}>
                   <svg

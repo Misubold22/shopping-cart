@@ -21,15 +21,14 @@ function Home() {
     >
       <Suspense fallback={<Spinner />}>
         <section className={styles.intro}>
-          <div className={styles.infoContainer}>
-            <h1 className={styles.introHeader}>organic market</h1>
-            <p className={styles.tagline}>Good food, simply.</p>
-            <p className={styles.introDescription}>
-              Fresh, thoughtfully sourced food for everyday living. Simple
-              products. Honest ingredients. Less waste.
-            </p>
-            <ShopButton />
-          </div>
+          <h1 className={styles.introHeader}>organic market</h1>
+          <p className={styles.tagline}>Good food, simply.</p>
+          <p className={styles.introDescription}>
+            Fresh, thoughtfully sourced food for everyday living. Simple
+            products. Honest ingredients. Less waste.
+          </p>
+          <ShopButton />
+
           <section className={styles.pictureContainer}>
             <div className={styles.introImageContainer}>
               <img

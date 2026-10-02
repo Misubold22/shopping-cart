@@ -1,7 +1,7 @@
 // Shop.jsx
 import { Outlet, useOutletContext } from "react-router";
 import createOrderedProduct from "../../utils/createOrderedProduct";
-import increaseProductQuantity from "../../data/increaseProductQuantity";
+import updateProductQuantity from "../../data/updateProductQuantity";
 import { AnimatePresence } from "framer-motion";
 
 function Shop() {
@@ -10,18 +10,13 @@ function Shop() {
   const addBoughtProduct = (orderedProduct) => {
     setBoughtProducts((prevProducts) => [...prevProducts, orderedProduct]);
   };
-  const handleBuy = (product, quantity) => {
+  const handleBuy = (product, quantity, id) => {
     const productAlreadyBought = boughtProducts.some(
       (p) => p.id === product.id,
     );
 
     if (productAlreadyBought) {
-      const increasedProductQuantity = increaseProductQuantity(
-        boughtProducts,
-        product,
-        quantity,
-      );
-      setBoughtProducts(increasedProductQuantity);
+      updateProductQuantity(id, setBoughtProducts, quantity, true);
       return;
     }
     addBoughtProduct(createOrderedProduct(product, quantity));
