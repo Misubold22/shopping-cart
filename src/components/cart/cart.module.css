@@ -74,9 +74,10 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 272px;
-  width: 25rem;
-  padding: 0 1rem;
+
+  height: 22.5rem;
+  width: 26rem;
+  padding: 1rem 1.2rem;
   letter-spacing: 0.5px;
 }
 
@@ -90,6 +91,11 @@
   color: var(--text);
   font-size: clamp(0.75rem, 0.6591rem + 0.4545vw, 1rem);
   font-weight: 500;
+}
+
+.rowTotal {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .value,
@@ -252,7 +258,60 @@
     justify-content: center;
   }
   .orderSummary {
-    height: 17rem;
-    width: 60%;
+    height: 20rem;
+    width: 70%;
   }
+}
+
+.checkoutButtonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.Button {
+  background-color: #669c2a;
+  border: none;
+  color: white;
+  padding: clamp(0.5rem, 0.4273rem + 0.3636vw, 0.7rem)
+    clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
+  font-size: clamp(0.75rem, 0.6591rem + 0.4545vw, 1rem);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
+  border-radius: 0;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.Button:hover {
+  background-color: #5a8825;
+}
+.Button:after {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.Button:hover:after {
+  animation: ripple_401 1s ease-out;
+}
+
+.Button:active {
+  background-color: #4d7620;
 }

@@ -1,0 +1,86 @@
+.aboutUs {
+  margin: 2rem;
+}
+
+.aboutUsSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.aboutImgWrapper {
+  margin-inline: auto;
+  margin: 0;
+  padding: 0;
+  width: 85%;
+  border-radius: 12px;
+  margin: 10px auto;
+  box-shadow: 0 2px 7px #dfdfdf;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+
+  border: 1px solid var(--brand);
+  position: relative;
+
+  text-align: center;
+}
+
+.aboutUsImage {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 3;
+}
+
+.aboutHeading {
+  margin-top: auto;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1rem, 0.4545rem + 2.7273vw, 2.5rem);
+  color: var(--brand);
+  font-family: Is;
+  letter-spacing: 2px;
+  font-family: Is;
+  font-weight: 800;
+  font-size: clamp(1rem, 0.0909rem + 4.5455vw, 3.5rem);
+  letter-spacing: 0.5rem;
+  margin: 0;
+  color: var(--brand);
+}
+
+.contentWrapper {
+  width: 55%;
+}
+
+.mottoHeader {
+  letter-spacing: -0.01em;
+  font-size: clamp(1rem, 0.8182rem + 0.9091vw, 1.5rem);
+  font-weight: 600;
+}
+
+.missionHeader,
+.valuesHeading {
+  font-weight: 600;
+
+  font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
+}
+
+.valueItemHeader {
+  font-weight: 600;
+  font-size: clamp(0.9rem, 0.8636rem + 0.1818vw, 1rem);
+}
+
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

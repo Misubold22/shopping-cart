@@ -1,7 +1,7 @@
 // routes.jsx
 import App from "./App";
 import Home from "./components/home/Home.jsx";
-import About from "./About";
+import AboutUs from "./components/aboutUs/AboutUs.jsx";
 import Cart from "./components/cart/Cart.jsx";
 import NoMatch from "./NoMatch";
 import Contact from "./Contact";
@@ -40,7 +40,7 @@ const routes = [
         ],
       },
 
-      { path: "about", element: <About /> },
+      { path: "about", element: <AboutUs /> },
       { path: "cart", element: <Cart /> },
       {
         path: "posts",

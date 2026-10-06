@@ -69,40 +69,48 @@ function CartItem({ handleProductDelete, product, setBoughtProducts }) {
   );
 }
 
+function CheckoutButton() {
+  return <button className={styles.Button}>Checkout</button>;
+}
+
 function OrderSummary({ boughtProducts }) {
   const { subTotal, discountAmount, taxAmount, shipping, finalPrice } =
     calculateOrderSummary(boughtProducts);
 
   return (
-    <article className={styles.orderSummary}>
-      <h2 className={styles.orderSummaryTitle}>Order Summary</h2>
-      <div className={styles.row}>
-        <span className={styles.label}>Subtotal</span>
-        <span className={styles.value}>${subTotal.toFixed(2)}</span>
-      </div>
+    <>
+      <article className={styles.orderSummary}>
+        <h2 className={styles.orderSummaryTitle}>Order Summary</h2>
+        <div className={styles.row}>
+          <span className={styles.label}>Subtotal</span>
+          <span className={styles.value}>${subTotal.toFixed(2)}</span>
+        </div>
 
-      <div className={styles.rowDiscount}>
-        <span className={styles.label}>Discount (-5%)</span>
-        <span className={styles.valueNegative}>
-          - ${discountAmount.toFixed(2)}{" "}
-        </span>
-      </div>
+        <div className={styles.rowDiscount}>
+          <span className={styles.label}>Discount (-5%)</span>
+          <span className={styles.valueNegative}>
+            - ${discountAmount.toFixed(2)}{" "}
+          </span>
+        </div>
 
-      <div className={styles.rowTax}>
-        <span className={styles.label}>Tax</span>
-        <span className={styles.value}>${taxAmount.toFixed(2)}</span>
-      </div>
+        <div className={styles.rowTax}>
+          <span className={styles.label}>Tax</span>
+          <span className={styles.value}>${taxAmount.toFixed(2)}</span>
+        </div>
 
-      <div className={styles.rowDelivery}>
-        <span className={styles.label}>Delivery Fee</span>
-        <span className={styles.value}>${shipping}</span>
-      </div>
+        <div className={styles.rowDelivery}>
+          <span className={styles.label}>Delivery Fee</span>
+          <span className={styles.value}>${shipping}</span>
+        </div>
 
-      <div className={styles.rowTotal}>
-        <span className={styles.labelTotal}>Total</span>
-        <span className={styles.valueTotal}> ${finalPrice.toFixed(2)}</span>
-      </div>
-    </article>
+        <div className={styles.rowTotal}>
+          <span className={styles.labelTotal}>Total</span>
+          <span className={styles.valueTotal}> ${finalPrice.toFixed(2)}</span>
+        </div>
+
+        <CheckoutButton />
+      </article>
+    </>
   );
 }
 
