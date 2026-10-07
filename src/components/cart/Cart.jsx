@@ -1,5 +1,5 @@
 // Cart.jsx
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./cart.module.css";
 import { useOutletContext } from "react-router";
 import updateProductQuantity from "../../data/updateProductQuantity";
@@ -20,7 +20,11 @@ function CartItem({ handleProductDelete, product, setBoughtProducts }) {
   };
 
   return (
-    <article key={product.id} className={styles.CartItem}>
+    <motion.article
+      exit={{ opacity: 0, scale: 0 }}
+      key={product.id}
+      className={styles.CartItem}
+    >
       <div className={styles.productImageContainer}>
         {" "}
         <img className={styles.productImage} alt="" src={product.image} />
@@ -65,7 +69,7 @@ function CartItem({ handleProductDelete, product, setBoughtProducts }) {
           </button>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
@@ -116,28 +120,18 @@ function OrderSummary({ boughtProducts }) {
 
 function EmptyCart() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.4 }}
-      key="emptycart"
-    >
-      <div className={styles.emptyCart}>
-        <h2 className={styles.emptyCartTitle}>
-          They Are No Items In Your Basket
-        </h2>
-        <ShopButton />
-      </div>
-    </motion.div>
+    <div className={styles.emptyCart}>
+      <h2 className={styles.emptyCartTitle}>
+        They Are No Items In Your Basket
+      </h2>
+      <ShopButton />
+    </div>
   );
 }
 
 function Cart() {
   const { setProductCount, boughtProducts, setBoughtProducts } =
     useOutletContext();
-  const product = boughtProducts;
-  console.log(product);
 
   const handleProductDelete = (id) => {
     const updatedCartList = boughtProducts.filter(
@@ -150,41 +144,55 @@ function Cart() {
   const isCartEmpty = boughtProducts.length === 0;
 
   return (
-    <>
-      {isCartEmpty ? (
-        <EmptyCart />
-      ) : (
-        <motion.div
-          className="cart"
-          key="cart"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <div className={styles.page}>
-            <div className={styles.cartHeader}>
-              <h1 className={styles.cartTitle}>Your Basket</h1>
-            </div>
-          </div>
-          <div className={styles.cartLayout}>
-            <div className={styles.productsContainer}>
-              {" "}
-              {boughtProducts.map((product) => (
-                <CartItem
-                  product={product}
-                  key={product.id}
-                  handleProductDelete={handleProductDelete}
-                  setBoughtProducts={setBoughtProducts}
-                  boughtProducts={boughtProducts}
-                />
-              ))}{" "}
+    <AnimatePresence mode="wait">
+      <div className="cartWrapper">
+        {isCartEmpty ? (
+          <motion.div
+            className="cart"
+            key="empty-cart"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            <EmptyCart />
+          </motion.div>
+        ) : (
+          <motion.div
+            className="cart"
+            key="cart"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            <div className={styles.page}>
+              <div className={styles.cartHeader}>
+                <h1 className={styles.cartTitle}>Your Basket</h1>
+              </div>
             </div>
 
-            <OrderSummary boughtProducts={boughtProducts} />
-          </div>
-        </motion.div>
-      )}
-    </>
+            <div className={styles.cartLayout}>
+              <div className={styles.productsContainer}>
+                <AnimatePresence>
+                  {boughtProducts.map((product) => (
+                    <CartItem
+                      product={product}
+                      key={product.id}
+                      handleProductDelete={handleProductDelete}
+                      setBoughtProducts={setBoughtProducts}
+                      boughtProducts={boughtProducts}
+                    />
+                  ))}
+                </AnimatePresence>
+              </div>
+
+              <OrderSummary boughtProducts={boughtProducts} />
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </AnimatePresence>
   );
 }
 

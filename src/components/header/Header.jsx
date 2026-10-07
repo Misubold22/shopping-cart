@@ -1,15 +1,10 @@
 import { useState } from "react";
 import styles from "./header.module.css";
 import { NavLink, Outlet } from "react-router";
-//import basketIcon from "../../assets/icons8-basket.png";
-//import basketIcon from "../../assets/shopping-bag.png";
 import { IoMdCart } from "react-icons/io";
 import { IconContext } from "react-icons";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
 
 const ShowCartCount = ({ productCount }) => {
-  // () => setIsHidden(false);
   return <div className={styles.orderCount}>{productCount}</div>;
 };
 
@@ -49,7 +44,7 @@ const Header = ({ productCount, setProductCount }) => {
             </li>
 
             <li className={styles.navItem}>
-              <NavLink to="/posts" className={styles.list}>
+              <NavLink to="/contact" className={styles.list}>
                 Contact
               </NavLink>
             </li>

@@ -41,7 +41,7 @@ const routes = [
       { path: "about", element: <AboutUs /> },
       { path: "cart", element: <Cart /> },
       {
-        path: "posts",
+        path: "contact",
         element: <ContactUs />,
       },
       { path: "*", element: <NoMatch /> },

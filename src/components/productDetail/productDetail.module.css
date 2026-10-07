@@ -9,7 +9,6 @@
   flex-flow: row nowrap;
   padding-bottom: 0;
   margin-bottom: 0;
-  gap: 5rem;
   justify-content: center;
 }
 
@@ -31,7 +30,6 @@
   font-weight: 600;
   font-family: "Montserrat";
   text-wrap: wrap;
-  font-size: 30px;
   font-size: clamp(1.625rem, 1.5341rem + 0.4545vw, 1.875rem);
   padding: 0;
   margin: 0;
@@ -261,6 +259,8 @@
   .rightHalf {
     align-items: center;
     padding-left: 0rem;
+    margin-top: 1rem;
+    padding-top: 0;
   }
 }
 

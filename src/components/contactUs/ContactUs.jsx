@@ -1,6 +1,6 @@
 // AboutUs.jsx
 import styles from "./contactUs.module.css";
-import contactUsBanner from "../../assets/contactUs.jpg";
+import contactUsBanner from "../../assets/contactUs.webp";
 import { motion } from "framer-motion";
 
 function ContactUs() {
@@ -16,6 +16,8 @@ function ContactUs() {
         <div className={styles.contactImgWrapper}>
           <img
             src={contactUsBanner}
+            width={2048}
+            height={684}
             alt="About us banner"
             className={styles.contactImage}
           />{" "}

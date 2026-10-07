@@ -1,22 +1,21 @@
 import styles from "./home.module.css";
 import introPic from "../../assets/shoppingBag.jpg";
 import introPic2 from "../../assets/fruitsAndVegetables.jpg";
-import fieldPic from "../../assets/field.jpg";
-import { NavLink } from "react-router";
+import fieldPic from "../../assets/field.webp";
 import { Suspense } from "react";
 import Spinner from "../spinner/Spinner.jsx";
 import ShopButton from "../shopButton/ShopButton.jsx";
 import { motion } from "motion/react";
+import pageVariants from "../pageVariants/pageVariants.js";
 
-//import pageVariants from "../pageVariants/pageVariants.js";
-//import { motion } from "framer-motion";
 const ease = [0.16, 1, 0.3, 1];
 
 function Home() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
-      animate={{ opacity: 1, y: 0 }}
+      variants={pageVariants}
+      initial="hidden"
+      animate="visible"
       transition={{ duration: 0.7, ease }}
     >
       <Suspense fallback={<Spinner />}>
@@ -34,6 +33,8 @@ function Home() {
               <img
                 src={introPic}
                 alt="Fresh produce in a reusable shopping bag"
+                width={640}
+                height={960}
                 className={styles.introImage}
               />{" "}
             </div>
@@ -48,6 +49,8 @@ function Home() {
                 <img
                   src={introPic2}
                   alt="Fresh fruits and vegetables"
+                  width={640}
+                  height={426}
                   className={styles.secondaryImage}
                 />
               </div>
@@ -84,6 +87,8 @@ function Home() {
           </div>
           <img
             src={fieldPic}
+            width={1920}
+            height={1335}
             loading="lazy"
             alt="Fresh fruits and vegetables"
             className={styles.fieldImg}

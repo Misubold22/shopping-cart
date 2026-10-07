@@ -49,7 +49,7 @@ body {
 /* Hide scrollbar for IE, Edge and Firefox */
 .body {
   -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));*/
+  scrollbar-width: none; /* Firefox */
 }
 
 .shop {
@@ -61,4 +61,17 @@ body {
 p {
   font-size: (0.8rem, 0.7273rem + 0.3636vw, 1rem);
   color: var(--text);
+}
+
+.scrollBody {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartWrapper,
+.card {
+  min-height: 40vh;
 }

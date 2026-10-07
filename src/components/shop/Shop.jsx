@@ -23,8 +23,6 @@ function Shop() {
     setProductCount((count) => count + 1);
   };
 
-  console.log(boughtProducts);
-
   return (
     <div className="shop">
       <AnimatePresence mode="wait">

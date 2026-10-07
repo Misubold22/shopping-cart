@@ -1,6 +1,6 @@
 // AboutUs.jsx
 import styles from "./aboutUs.module.css";
-import aboutUsBanner from "../../assets/aboutUs.jpg";
+import aboutUsBanner from "../../assets/aboutUs.webp";
 import { motion } from "framer-motion";
 
 function AboutUs() {
@@ -16,6 +16,8 @@ function AboutUs() {
         <div className={styles.aboutImgWrapper}>
           <img
             src={aboutUsBanner}
+            width={2170}
+            height={725}
             alt="About us banner"
             className={styles.aboutUsImage}
           />{" "}
