@@ -20,8 +20,6 @@ const fetchJson = async (url) => {
   return response.json();
 };
 
-//export default fetchWithCache;
-
 export async function fetchJsonWithCache() {
   return fetchWithCache("https://dummyjson.com/products/category/groceries");
 }

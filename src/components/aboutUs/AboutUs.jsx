@@ -10,7 +10,7 @@ function AboutUs() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
-      className={styles.aboutUs}
+      className={styles.contactUs}
     >
       <section className={styles.aboutUsSection}>
         <div className={styles.aboutImgWrapper}>
@@ -19,7 +19,7 @@ function AboutUs() {
             alt="About us banner"
             className={styles.aboutUsImage}
           />{" "}
-          <h2 id="about-heading" className={styles.aboutHeading}>
+          <h2 id="about-heading" className={styles.aboutHeader}>
             About Us
           </h2>
         </div>
@@ -47,7 +47,7 @@ function AboutUs() {
           </article>
 
           <section className="values-section">
-            <h3 id="values-heading" className={styles.valuesHeading}>
+            <h3 id="values-heading" className={styles.valuesHeader}>
               Our Values
             </h3>
 

@@ -49,12 +49,6 @@ const Header = ({ productCount, setProductCount }) => {
             </li>
 
             <li className={styles.navItem}>
-              <NavLink to="/profile" className={styles.list}>
-                Profile
-              </NavLink>
-            </li>
-
-            <li className={styles.navItem}>
               <NavLink to="/posts" className={styles.list}>
                 Contact
               </NavLink>

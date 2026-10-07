@@ -1,0 +1,12 @@
+.notFound {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-direction: column;
+}
+
+.notFoundHeader {
+  font-size: clamp(1rem, 0.8545rem + 0.7273vw, 1.4rem);
+}

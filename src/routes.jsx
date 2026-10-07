@@ -3,10 +3,8 @@ import App from "./App";
 import Home from "./components/home/Home.jsx";
 import AboutUs from "./components/aboutUs/AboutUs.jsx";
 import Cart from "./components/cart/Cart.jsx";
-import NoMatch from "./NoMatch";
-import Contact from "./Contact";
-import PostLists from "./PostLists";
-import Post from "./Post";
+import NoMatch from "./components/noMatch/NoMatch.jsx";
+import ContactUs from "./components/contactUs/ContactUs.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import Spinner from "./components/spinner/Spinner.jsx";
 import ProductDetail from "./components/productDetail/ProductDetail.jsx";
@@ -44,11 +42,7 @@ const routes = [
       { path: "cart", element: <Cart /> },
       {
         path: "posts",
-        element: <Contact />,
-        children: [
-          { index: true, element: <PostLists /> },
-          { path: ":slug", element: <Post /> },
-        ],
+        element: <ContactUs />,
       },
       { path: "*", element: <NoMatch /> },
     ],

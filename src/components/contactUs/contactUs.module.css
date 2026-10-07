@@ -2,14 +2,14 @@
   margin: 2rem;
 }
 
-.aboutUsSection {
+.contactMain {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.aboutImgWrapper {
+.contactImgWrapper {
   margin: 0;
   padding: 0;
   width: 85%;
@@ -22,7 +22,7 @@
   position: relative;
 }
 
-.aboutUsImage {
+.contactImage {
   width: 100%;
   height: auto;
   display: block;
@@ -31,7 +31,7 @@
   aspect-ratio: 16 / 3;
 }
 
-.aboutHeader {
+.contactHeader {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -46,19 +46,26 @@
 
 .contentWrapper {
   width: 55%;
+  margin-top: 0.5rem;
 }
 
-.mottoHeader {
+.secondContactHeader {
   letter-spacing: -0.01em;
   font-size: clamp(1rem, 0.8182rem + 0.9091vw, 1.5rem);
   font-weight: 600;
+  padding-bottom: 0.5rem;
 }
 
-.missionHeader,
-.valuesHeader {
+.customerSectionHeader,
+.pressSectionHeader,
+.careersSectionHeader,
+.supplierSectionHeader,
+.dataSectionHeader {
   font-weight: 600;
 
   font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
 }
 
 .valueItemHeader {
