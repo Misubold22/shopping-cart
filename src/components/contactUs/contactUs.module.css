@@ -62,20 +62,8 @@
 .supplierSectionHeader,
 .dataSectionHeader {
   font-weight: 600;
-
+  text-align: left;
   font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
   padding-top: 0.5rem;
   padding-bottom: 0.3rem;
-}
-
-.valueItemHeader {
-  font-weight: 600;
-  font-size: clamp(0.9rem, 0.8636rem + 0.1818vw, 1rem);
-}
-
-ul,
-li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
 }

@@ -90,7 +90,7 @@ function Home() {
             width={1920}
             height={1335}
             loading="lazy"
-            alt="Fresh fruits and vegetables"
+            alt="Agricultural green field"
             className={styles.fieldImg}
           />
         </section>

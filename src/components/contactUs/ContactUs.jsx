@@ -18,7 +18,7 @@ function ContactUs() {
             src={contactUsBanner}
             width={2048}
             height={684}
-            alt="About us banner"
+            alt="Contact us banner"
             className={styles.contactImage}
           />{" "}
           <h1 id="contact-heading" className={styles.contactHeader}>
