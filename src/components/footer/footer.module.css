@@ -55,7 +55,7 @@ input[type="email"] {
   padding: clamp(0.75rem, 0.6591rem + 0.0284vw, 1rem);
   border: none;
   outline: none;
-  font-size: 0.875;
+  font-size: 0.875rem;
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
