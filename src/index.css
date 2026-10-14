@@ -75,3 +75,7 @@ p {
 .card {
   min-height: 35vh;
 }
+
+a {
+  text-decoration: none;
+}

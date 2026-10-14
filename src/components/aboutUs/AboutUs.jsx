@@ -25,6 +25,7 @@ function AboutUs() {
             About Us
           </h2>
         </div>
+
         <div className={styles.contentWrapper}>
           <h3 className={styles.mottoHeader}> About OLIA</h3>
           <p className="lead-statement">

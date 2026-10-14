@@ -62,10 +62,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
   margin: 0;
   margin-top: clamp(1rem, -0.4545rem + 7.2727vw, 5rem);
   gap: clamp(1.5rem, 0.7727rem + 3.6364vw, 3.5rem);
+  min-height: 70vh;
 }
 
 .imgHeadline,
@@ -87,21 +87,23 @@
   font-weight: 600;
 }
 
+.introImage,
+.secondaryImage {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: auto;
+}
+
 .introImage {
   aspect-ratio: 2.5 / 3;
 }
 .secondaryImage {
   aspect-ratio: 16 / 14;
 }
-.introImage,
-.secondaryImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+
 .introImageContainer {
-  min-width: 10rem;
+  animation: fadeIn 0.3s ease;
 }
 
 .secondaryImageContainer {
@@ -169,5 +171,14 @@
 
   .secondaryImage {
     aspect-ratio: 4.5 / 3;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

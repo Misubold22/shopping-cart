@@ -15,14 +15,14 @@
   margin: 0;
   padding: 0;
   width: 85%;
-  min-height: 6rem;
-
   margin: 10px auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--brand);
   position: relative;
+  background: #f0f0f0;
+  aspect-ratio: 16 / 3;
 }
 
 .contactImage {
@@ -32,6 +32,7 @@
   margin: 0;
   padding: 0;
   aspect-ratio: 16 / 3;
+  animation: fadeIn 0.3s ease;
 }
 
 .contactHeader {
@@ -50,6 +51,16 @@
 .contentWrapper {
   margin-top: 0.5rem;
   width: 85%;
+}
+
+.emailLink {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.emailLink:hover {
+  text-decoration: underline;
 }
 
 .secondContactHeader {
@@ -75,9 +86,19 @@
   .contactImgWrapper {
     margin: 0;
     padding: 0;
+    min-height: 6rem;
   }
 
   .contactImage {
     min-height: 6rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

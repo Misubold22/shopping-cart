@@ -29,58 +29,91 @@ function ContactUs() {
           <h1 className={styles.secondContactHeader}>Contact OLIA</h1>
           <p>
             If you would like to place an order with us or have a question about
-            an existing order, please email us at hello@oliamarket.com.
+            an existing order, please email us at{" "}
+            <a href="mailto:hello@oliamarket.com" className={styles.emailLink}>
+              hello@oliamarket.com
+            </a>
+            .
           </p>
           <p>
-            If you can’t find the answer to your question on our website, or
-            simply have something you’d like to share with us, we’d be happy to
+            If you can't find the answer to your question on our website, or
+            simply have something you'd like to share with us, we'd be happy to
             hear from you.
           </p>
-
           <section>
             <h2 className={styles.customerSectionHeader}>Customer Support</h2>
             <p>
               For questions about orders, products, deliveries, or anything
-              else, please email us at hello@oliamarket.com.
+              else, please email us at{" "}
+              <a
+                href="mailto:hello@oliamarket.com"
+                className={styles.emailLink}
+              >
+                hello@oliamarket.com
+              </a>
+              .
             </p>
             <p>
               Our team is available Monday to Friday, from 9am - 5pm. We aim to
               respond to all enquiries within 1-2 working days.
             </p>
           </section>
-
           <section>
             <h2 className={styles.pressSectionHeader}>
               Press & Collaborations
             </h2>
             <p>
               For press, marketing, partnership, or collaboration enquiries,
-              please email us at hello@oliamarket.com.
+              please email us at{" "}
+              <a
+                href="mailto:hello@oliamarket.com"
+                className={styles.emailLink}
+              >
+                hello@oliamarket.com
+              </a>
+              .
             </p>
           </section>
-
           <section>
             <h2 className={styles.careersSectionHeader}>Careers at OLIA</h2>
             <p>
-              Interested in joining the OLIA team? Send us an email at
-              hello@oliamarket.com and tell us a little about yourself and what
-              you’d like to do at OLIA.
+              Interested in joining the OLIA team? Send us an email at{" "}
+              <a
+                href="mailto:hello@oliamarket.com"
+                className={styles.emailLink}
+              >
+                careers@oliamarket.com
+              </a>{" "}
+              and tell us a little about yourself and what you'd like to do at
+              OLIA.
             </p>
           </section>
-
           <section>
             <h2 className={styles.supplierSectionHeader}>New Suppliers</h2>
             <p>
               If you are a supplier, grower, producer, or would like to work
-              with us, please contact us at suppliers@oliamarket.com.
+              with us, please contact us at{" "}
+              <a
+                href="mailto:hello@oliamarket.com"
+                className={styles.emailLink}
+              >
+                suppliers@oliamarket.com
+              </a>
+              .
             </p>
           </section>
-
           <section>
             <h2 className={styles.dataSectionHeader}>Data & Privacy</h2>
             <p>
               For questions about your personal data, privacy, or how we handle
-              your information, please email us at privacy@oliamarket.com.
+              your information, please email us at{" "}
+              <a
+                href="mailto:hello@oliamarket.com"
+                className={styles.emailLink}
+              >
+                privacy@oliamarket.com
+              </a>
+              .
             </p>
           </section>
         </div>

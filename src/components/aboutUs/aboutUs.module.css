@@ -17,21 +17,21 @@
   margin: 0;
   padding: 0;
   width: 85%;
-  min-height: 6rem;
   margin: 10px auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--brand);
   position: relative;
+  background: #f0f0f0;
+  aspect-ratio: 16 / 3;
 }
 
 .aboutUsImage {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0;
-  padding: 0;
+  animation: fadeIn 0.3s ease;
   aspect-ratio: 16 / 3;
 }
 
@@ -81,6 +81,7 @@ li {
   .aboutImgWrapper {
     margin: 0;
     padding: 0;
+    min-height: 6rem;
   }
 
   .aboutUsImage {
@@ -91,5 +92,14 @@ li {
 @media (max-width: 980px) {
   .contentWrapper {
     margin-top: 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
