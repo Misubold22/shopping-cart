@@ -1,5 +1,7 @@
 .contactUs {
-  margin: 2rem;
+  margin: 0;
+  padding: 0;
+  margin-top: 0.5rem;
 }
 
 .contactMain {
@@ -12,7 +14,8 @@
 .contactImgWrapper {
   margin: 0;
   padding: 0;
-  width: 75%;
+  width: 85%;
+  min-height: 6rem;
 
   margin: 10px auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -45,8 +48,8 @@
 }
 
 .contentWrapper {
-  width: 55%;
   margin-top: 0.5rem;
+  width: 85%;
 }
 
 .secondContactHeader {
@@ -66,4 +69,15 @@
   font-size: clamp(1rem, 0.9273rem + 0.3636vw, 1.2rem);
   padding-top: 0.5rem;
   padding-bottom: 0.3rem;
+}
+
+@media (max-width: 1200px) {
+  .contactImgWrapper {
+    margin: 0;
+    padding: 0;
+  }
+
+  .contactImage {
+    min-height: 6rem;
+  }
 }

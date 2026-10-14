@@ -37,7 +37,7 @@ const ProductCard = ({ product, handleBuy }) => {
         >
           <article className={styles.card}>
             <div className={styles.cardImageWrap}>
-              <img alt="" src={product.images[0]} />
+              <img alt="" src={product.images[0]} width={1000} height={1000} />
             </div>
             <h2 className={styles.cardTitle}>{product.title}</h2>
             <div className={styles.cardFooter}>

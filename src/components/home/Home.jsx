@@ -13,6 +13,7 @@ const ease = [0.16, 1, 0.3, 1];
 function Home() {
   return (
     <motion.div
+      className={styles.home}
       variants={pageVariants}
       initial="hidden"
       animate="visible"

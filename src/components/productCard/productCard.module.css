@@ -15,7 +15,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--brand);
   width: 100%;
-  max-width: 15rem;
+  max-width: clamp(10rem, 8.1818rem + 9.0909vw, 15rem);
 }
 
 .cardImageWrap {
@@ -23,7 +23,7 @@
   flex-wrap: wrap;
   background: #f0f0f0;
   width: 100%;
-  max-width: 15rem;
+  max-width: clamp(10rem, 8.1818rem + 9.0909vw, 15rem);
 }
 
 .cardImageWrap img {

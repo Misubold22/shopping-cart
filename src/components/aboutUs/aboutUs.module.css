@@ -1,5 +1,7 @@
 .aboutUs {
-  margin: 2rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  margin-top: 0.5rem;
 }
 
 .aboutUsSection {
@@ -7,12 +9,15 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .aboutImgWrapper {
   margin: 0;
   padding: 0;
-  width: 75%;
+  width: 85%;
+  min-height: 6rem;
   margin: 10px auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -44,7 +49,8 @@
 }
 
 .contentWrapper {
-  width: 55%;
+  width: 85%;
+  margin-top: 0.3rem;
 }
 
 .mottoHeader {
@@ -70,4 +76,20 @@ li {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+@media (max-width: 1200px) {
+  .aboutImgWrapper {
+    margin: 0;
+    padding: 0;
+  }
+
+  .aboutUsImage {
+    min-height: 6rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .contentWrapper {
+    margin-top: 1.5rem;
+  }
 }

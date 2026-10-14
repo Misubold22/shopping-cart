@@ -1,6 +1,8 @@
 .card {
   margin: 3rem;
   background-attachment: fixed;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .cardBody {
@@ -38,7 +40,7 @@
 
 .cardImageWrap {
   width: 100%;
-  max-width: 25rem;
+  max-width: clamp(20rem, 18.1818rem + 9.0909vw, 25rem);
   margin-inline: auto;
   margin: 0;
   padding: 0;
@@ -117,6 +119,7 @@
   align-items: center;
   position: relative;
   margin-top: 5rem;
+  margin-top: clamp(1rem, -0.4545rem + 7.2727vw, 5rem);
 }
 
 .card__footer::before {
@@ -254,12 +257,26 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
 
   .rightHalf {
     align-items: center;
-    padding-left: 0rem;
-    margin-top: 1rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card__footer {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .cardImageWrap {
+    min-width: 16rem;
+  }
+  .cardTitle {
+    margin-top: 0;
     padding-top: 0;
   }
 }

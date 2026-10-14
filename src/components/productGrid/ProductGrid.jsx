@@ -24,7 +24,7 @@ const ProductGrid = () => {
   const { handleBuy } = useOutletContext();
   const fetchJson = useLoaderData();
   const products = fetchJson.products;
-  //console.log(products);
+
   return (
     <motion.section
       variants={containerVariants}

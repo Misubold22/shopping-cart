@@ -55,7 +55,6 @@ const ProductDetail = () => {
                 <img alt="" src={clickedProduct.images[0]} />
               </div>
             </div>
-
             <div className={styles.rightHalf}>
               <h1 className={styles.cardTitle}>{clickedProduct.title}</h1>
               <div className={styles.cardDescriptionWrap}>

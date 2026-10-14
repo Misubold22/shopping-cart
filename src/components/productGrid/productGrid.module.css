@@ -3,16 +3,13 @@
   padding-top: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
   grid-auto-flow: row;
-  gap: 2.5rem;
+  gap: clamp(1rem, 0.4545rem + 2.7273vw, 2.5rem);
   margin: 0 auto;
-  margin: 2.5rem;
+  margin: clamp(0.5rem, 0.1364rem + 1.8182vw, 1.5rem);
 }
 
-@media (max-width: 720px) {
-  .products-grid {
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
-
-    background-color: none;
+@media (max-width: 1202px) {
+  .productsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(9.25rem, 1fr));
   }
 }

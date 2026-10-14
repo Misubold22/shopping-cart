@@ -20,29 +20,25 @@
   --form-button-text: #ffffff;
 }
 
-.intro {
-  color: var(--text);
-  margin: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.home {
+  margin: clamp(0.5rem, 0.1364rem + 1.8182vw, 1.5rem);
+  margin-bottom: clamp(2.5rem, 2.1364rem + 1.8182vw, 3.5rem);
 }
 
-.infoContainer {
-  gap: 0.5rem;
-  margin: 3.5rem;
+.intro {
+  color: var(--text);
+  margin-bottom: clamp(1rem, 0.4545rem + 2.7273vw, 2.5rem);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-  min-height: 70vh;
+  text-align: center;
 }
 
 .introHeader {
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 0.5rem;
+  margin-bottom: clamp(0.2rem, 0.0909rem + 0.5455vw, 0.5rem);
   font-size: clamp(1.5rem, 1.1364rem + 1.8182vw, 2.5rem);
   letter-spacing: -0.02em;
 }
@@ -52,14 +48,14 @@
   font-weight: 500;
   line-height: 1.4;
   font-size: clamp(1rem, 0.8545rem + 0.7273vw, 1.4rem);
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.3rem, 0.0455rem + 1.2727vw, 1rem);
 }
 
 .introDescription {
   font-size: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
   font-weight: 400;
   line-height: 1.6;
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(1.5rem, 1.1364rem + 1.8182vw, 2.5rem);
 }
 
 .pictureContainer {
@@ -68,8 +64,8 @@
   align-items: center;
   min-height: 70vh;
   margin: 0;
-  margin-top: 5rem;
-  gap: 3.5rem;
+  margin-top: clamp(1rem, -0.4545rem + 7.2727vw, 5rem);
+  gap: clamp(1.5rem, 0.7727rem + 3.6364vw, 3.5rem);
 }
 
 .imgHeadline,
@@ -109,23 +105,20 @@
 }
 
 .secondaryImageContainer {
-  margin-top: 0.7rem;
-  margin-bottom: 0.7rem;
+  margin: clamp(0.2rem, 0.0182rem + 0.9091vw, 0.7rem) 0;
 }
 
 .fieldSection {
-  margin: 2.5rem;
-
-  margin-top: 4rem;
   display: flex;
+  margin-top: clamp(1rem, -0.0909rem + 5.4545vw, 4rem);
   align-items: center;
   justify-content: center;
   text-wrap: wrap;
 }
 
 .fieldParagraph {
-  margin-top: 1.8rem;
-  margin-bottom: 2rem;
+  margin: clamp(0.2rem, -0.3818rem + 2.9091vw, 1.8rem) 0
+    clamp(0.5rem, -0.0455rem + 2.7273vw, 2rem) 0;
 }
 
 .fieldImg {
@@ -155,9 +148,12 @@
 @media (max-width: 1000px) {
   .fieldSection {
     flex-direction: column;
+    margin-top: 0;
   }
   .fieldDescription {
     padding-bottom: 2rem;
+    margin-top: 0;
+    padding-top: 0;
   }
   h3 {
     margin-top: 0;
@@ -165,7 +161,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .pictureContainer {
     flex-direction: column;
     flex-wrap: wrap;
